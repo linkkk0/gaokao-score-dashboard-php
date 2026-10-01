@@ -1,1 +1,5 @@
-<?php require_once __DIR__.'/includes/auth.php';require_once __DIR__.'/../config/database.php';check_csrf();db()->prepare('DELETE FROM exams WHERE id=?')->execute([(int)$_POST['id']]);header('Location:index.php');
+<?php require_once __DIR__ . '/includes/auth.php';
+require_once __DIR__ . '/../config/database.php';
+check_csrf();
+db()->prepare('DELETE FROM exams WHERE id=?')->execute([(int)$_POST['id']]);
+header('Location:index.php');

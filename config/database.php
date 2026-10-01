@@ -1,1 +1,14 @@
-<?php declare(strict_types=1); function db():PDO{static $p;if($p instanceof PDO)return $p;$h=getenv('DB_HOST')?:'127.0.0.1';$n=getenv('DB_NAME')?:'gaokao_score';$u=getenv('DB_USER')?:'root';$pw=getenv('DB_PASS')?:'';$p=new PDO("mysql:host=$h;dbname=$n;charset=utf8mb4",$u,$pw,[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC]);return $p;}
+<?php
+
+declare(strict_types=1);
+function db(): PDO
+{
+    static $p;
+    if ($p instanceof PDO) return $p;
+    $h = getenv('DB_HOST') ?: '127.0.0.1';
+    $n = getenv('DB_NAME') ?: 'gaokao_score';
+    $u = getenv('DB_USER') ?: 'root';
+    $pw = getenv('DB_PASS') ?: '';
+    $p = new PDO("mysql:host=$h;dbname=$n;charset=utf8mb4", $u, $pw, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
+    return $p;
+}

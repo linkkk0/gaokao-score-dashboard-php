@@ -1,1 +1,48 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="高三历次考试成绩趋势汇总"><title>高三成绩趋势</title><script src="assets/js/theme.js"></script><link rel="stylesheet" href="assets/css/style.css"></head><body><main class="page-shell"><header class="hero"><div class="hero-copy"><span class="eyebrow">SENIOR THREE · SCORE TRACKER</span><h1>高三历次成绩汇总</h1><p>把每一次考试串联起来，直观看见自己的变化与趋势。</p></div><div class="hero-actions"><button class="theme-toggle" data-theme-toggle>☾ 深色模式</button><div class="hero-meta"><div class="meta-item"><span id="examCount">0</span><small>场考试</small></div><div class="meta-divider"></div><div class="meta-item"><span id="latestScore">—</span><small>最近总分</small></div></div></div></header><section class="dashboard-card"><nav class="subject-tabs" id="subjectTabs"><button class="tab active" data-key="total">总成绩</button><button class="tab" data-key="chinese">语文</button><button class="tab" data-key="math">数学</button><button class="tab" data-key="english">英语</button><button class="tab" data-key="physics">物理</button><button class="tab" data-key="chemistry">化学</button><button class="tab" data-key="biology">生物</button></nav><div class="chart-header"><div><div class="chart-title-row"><h2 id="chartTitle">总成绩</h2><span class="chart-unit">分</span></div><p id="chartSubtitle">每场考试的总分变化趋势</p></div><div class="range-note" id="rangeNote">动态纵轴</div></div><div class="chart-wrap" id="chartWrap"><svg id="scoreChart"></svg><div class="chart-empty" id="chartEmpty" hidden>暂无成绩数据</div></div></section><footer class="footer"><span>© 2026 高三成绩趋势 · Personal Academic Dashboard</span></footer></main><script src="assets/js/chart.js"></script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="高三历次考试成绩趋势汇总">
+    <title>高三成绩趋势</title>
+    <script src="assets/js/theme.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <main class="page-shell">
+        <header class="hero">
+            <div class="hero-copy"><span class="eyebrow">SENIOR THREE · SCORE TRACKER</span>
+                <h1>高三历次成绩汇总</h1>
+                <p>把每一次考试串联起来，直观看见自己的变化与趋势。</p>
+            </div>
+            <div class="hero-actions"><button class="theme-toggle" data-theme-toggle>☾ 深色模式</button>
+                <div class="hero-meta">
+                    <div class="meta-item"><span id="examCount">0</span><small>场考试</small></div>
+                    <div class="meta-divider"></div>
+                    <div class="meta-item"><span id="latestScore">—</span><small>最近总分</small></div>
+                </div>
+            </div>
+        </header>
+        <section class="dashboard-card">
+            <nav class="subject-tabs" id="subjectTabs"><button class="tab active" data-key="total">总成绩</button><button class="tab" data-key="chinese">语文</button><button class="tab" data-key="math">数学</button><button class="tab" data-key="english">英语</button><button class="tab" data-key="physics">物理</button><button class="tab" data-key="chemistry">化学</button><button class="tab" data-key="biology">生物</button></nav>
+            <div class="chart-header">
+                <div>
+                    <div class="chart-title-row">
+                        <h2 id="chartTitle">总成绩</h2><span class="chart-unit">分</span>
+                    </div>
+                    <p id="chartSubtitle">每场考试的总分变化趋势</p>
+                </div>
+                <div class="range-note" id="rangeNote">动态纵轴</div>
+            </div>
+            <div class="chart-wrap" id="chartWrap"><svg id="scoreChart"></svg>
+                <div class="chart-empty" id="chartEmpty" hidden>暂无成绩数据</div>
+            </div>
+        </section>
+        <footer class="footer"><span>© 2026 高三成绩趋势 · Personal Academic Dashboard</span></footer>
+    </main>
+    <script src="assets/js/chart.js"></script>
+</body>
+
+</html>

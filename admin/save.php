@@ -1,1 +1,11 @@
-<?php require_once __DIR__.'/includes/auth.php';require_once __DIR__.'/../config/database.php';check_csrf();$v=[];foreach(['chinese','math','english','physics','chemistry','biology'] as $k)$v[]=(float)($_POST[$k]??0);$total=array_sum($v);$id=(int)($_POST['id']??0);$p=db();if($id)$p->prepare('UPDATE exams SET exam_date=?,exam_name=?,chinese=?,math=?,english=?,physics=?,chemistry=?,biology=?,total=? WHERE id=?')->execute([$_POST['exam_date'],trim($_POST['exam_name']),...$v,$total,$id]);else$p->prepare('INSERT INTO exams(exam_date,exam_name,chinese,math,english,physics,chemistry,biology,total) VALUES(?,?,?,?,?,?,?,?,?)')->execute([$_POST['exam_date'],trim($_POST['exam_name']),...$v,$total]);header('Location:index.php');
+<?php require_once __DIR__ . '/includes/auth.php';
+require_once __DIR__ . '/../config/database.php';
+check_csrf();
+$v = [];
+foreach (['chinese', 'math', 'english', 'physics', 'chemistry', 'biology'] as $k) $v[] = (float)($_POST[$k] ?? 0);
+$total = array_sum($v);
+$id = (int)($_POST['id'] ?? 0);
+$p = db();
+if ($id) $p->prepare('UPDATE exams SET exam_date=?,exam_name=?,chinese=?,math=?,english=?,physics=?,chemistry=?,biology=?,total=? WHERE id=?')->execute([$_POST['exam_date'], trim($_POST['exam_name']), ...$v, $total, $id]);
+else $p->prepare('INSERT INTO exams(exam_date,exam_name,chinese,math,english,physics,chemistry,biology,total) VALUES(?,?,?,?,?,?,?,?,?)')->execute([$_POST['exam_date'], trim($_POST['exam_name']), ...$v, $total]);
+header('Location:index.php');
